@@ -1,0 +1,26 @@
+dn: ou=groups,dc=hashicorp,dc=com
+objectClass: organizationalunit
+objectClass: top
+ou: groups
+description: groups of users
+
+dn: ou=users,dc=hashicorp,dc=com
+objectClass: organizationalunit
+objectClass: top
+ou: users
+description: users
+
+dn: cn=dev,ou=groups,dc=hashicorp,dc=com
+objectClass: groupofnames
+objectClass: top
+description: testing group for dev
+cn: dev
+member: cn=hashicorp,ou=users,dc=hashicorp,dc=com
+
+dn: cn=hashicorp,ou=users,dc=hashicorp,dc=com
+objectClass: person
+objectClass: top
+cn: hashicorp
+sn: hashicorp
+memberOf: cn=dev,ou=groups,dc=hashicorp,dc=com
+userPassword: hashicorp

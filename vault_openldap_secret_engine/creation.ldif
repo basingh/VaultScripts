@@ -1,0 +1,7 @@
+dn: cn={{.Username}},ou=users,dc=hashicorp,dc=com
+objectClass: person
+objectClass: top
+cn: learn
+sn: {{.Password | utf16le | base64}}
+memberOf: cn=dev,ou=groups,dc=hashicorp,dc=com
+userPassword: {{.Password}}
